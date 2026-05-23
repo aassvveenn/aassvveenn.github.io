@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asven Gariah</title>
+<meta name="description" content="Projets personnels d'Asven Gariah.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:       #E8EBE4;
+    --fg:       #1A1918;
+    --muted:    #7a7a72;
+    --border:   rgba(26,25,24,0.14);
+    --signal:   #39FF6A;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'Geist Mono', monospace;
+    font-weight: 300;
+    min-height: 100vh;
+    padding: 3.5rem 2.5rem 5rem;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  header {
+    margin-bottom: 5rem;
+  }
+
+  .name {
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+  }
+
+  .tagline {
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-top: 0.4rem;
+    letter-spacing: 0.04em;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .card {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    border: 0.5px solid var(--border);
+    border-left: 3px solid transparent;
+    background: transparent;
+    overflow: hidden;
+    transition: border-left-color 0.25s ease, border-color 0.25s ease;
+  }
+
+  .card:hover {
+    border-color: rgba(26,25,24,0.22);
+    border-left-color: var(--signal);
+  }
+
+  .card:hover .card-image {
+    filter: grayscale(0%);
+  }
+
+  .card:hover .card-arrow {
+    opacity: 1;
+    transform: translate(2px, -2px);
+  }
+
+  .card-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(30%);
+    transition: filter 0.4s ease;
+  }
+
+  .card-body {
+    padding: 1rem 1.1rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .card-title {
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 1.3;
+  }
+
+  .card-arrow {
+    font-size: 0.8rem;
+    color: var(--muted);
+    opacity: 0.3;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .card-desc {
+    font-size: 0.72rem;
+    color: var(--muted);
+    line-height: 1.65;
+    font-style: italic;
+  }
+
+  .card-url {
+    font-size: 0.65rem;
+    color: var(--muted);
+    opacity: 0.55;
+    margin-top: 0.15rem;
+    letter-spacing: 0.02em;
+  }
+
+  footer {
+    margin-top: 6rem;
+    font-size: 0.65rem;
+    color: var(--muted);
+    opacity: 0.7;
+    letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 520px) {
+    body { padding: 2.5rem 1.5rem 4rem; }
+    header { margin-bottom: 3rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="name">Asven Gariah</p>
+  <p class="tagline">))) fréquences</p>
+</header>
+
+<main>
+  <div class="grid">
+
+    <a class="card" href="https://interferences.vercel.app" target="_blank" rel="noopener">
+      <img
+        class="card-image"
+        src="https://interferences.vercel.app/og-image.jpg"
+        alt="Interférences"
+        onerror="this.style.display='none'"
+      >
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-title">Interférences</span>
+          <span class="card-arrow">↗</span>
+        </div>
+        <p class="card-desc">Je traverse le son. Blog sur l'écoute, le bruit, la musique.</p>
+        <span class="card-url">interferences.vercel.app</span>
+      </div>
+    </a>
+
+    <a class="card" href="https://tendsloreille.vercel.app" target="_blank" rel="noopener">
+      <img
+        class="card-image"
+        src="https://tendsloreille.vercel.app/og-image.jpg"
+        alt="Tends l'oreille rien"
+        onerror="this.style.display='none'"
+      >
+      <div class="card-body">
+        <div class="card-header">
+          <span class="card-title">Tends l'oreille rien</span>
+          <span class="card-arrow">↗</span>
+        </div>
+        <p class="card-desc">Quatre zones sonores transcrites en texte. L'humain a déserté.</p>
+        <span class="card-url">tendsloreille.vercel.app</span>
+      </div>
+    </a>
+
+  </div>
+</main>
+
+<footer>© Asven Gariah, 2026</footer>
+
+</body>
+</html>
